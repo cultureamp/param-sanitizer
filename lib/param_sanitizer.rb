@@ -28,7 +28,7 @@ class ParamSanitizer
   end
 
   def sanitize_string(string)
-    ActionController::Base.helpers.strip_tags(string)
+    ActionController::Base.helpers.sanitize(string)
   end
 
 end

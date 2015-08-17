@@ -4,14 +4,14 @@ describe ParamSanitizer do
 
   let(:safe_params) do
     {
-      name: 'jdoe',
+      name: '<b>jdoe</b>',
       parents: [
-        'Joe Hawes',
+        '<i>Joe Hawes</i>',
         'Arma Hernandez'
       ],
       current_session: {
         id: '1978512',
-        type: 'mobile',
+        type: '<p>mobile</p>',
         last_login: {
           chrome: '2014-01-01'
         }
@@ -23,12 +23,12 @@ describe ParamSanitizer do
     {
       name: '<b>jdoe</b>',
       parents: [
-        '<i>Joe Hawes</i>',
+        '<i onclick="xss()">Joe Hawes</i>',
         '<u>Arma Hernandez</u>'
       ],
       current_session: {
         id: '1978512',
-        type: '<p>mobile</p>',
+        type: '<p>mobile</p><script>alert("xss")</script>',
         last_login: {
           chrome: '<u>2014-01-01</u>'
         }
