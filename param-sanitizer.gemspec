@@ -9,6 +9,6 @@ Gem::Specification.new do |gem|
   gem.description = 'Sanitize input params in Rails'
   gem.homepage = 'https://github.com/knoxknox/param-sanitizer'
 
-  gem.add_dependency 'rails', '~> 3.2'
+  gem.add_dependency 'rails', ['>= 3.2', '< 5.0']
   gem.add_development_dependency 'rspec', '~> 3.0'
 end
